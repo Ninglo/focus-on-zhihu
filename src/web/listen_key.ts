@@ -5,6 +5,7 @@ export const listenKey: ListenKey = (code, inputCb) => {
     window.addEventListener('keydown', e => {
         if (e.code === code && !hasInput) {
             hasInput = true;
+            let removed = false
             let curt = '';
 
             const div = document.createElement('div');
@@ -14,9 +15,12 @@ export const listenKey: ListenKey = (code, inputCb) => {
             div.appendChild(input);
 
             const clear = () => {
+                if (removed) { return }
+
+                removed = true;
+                hasInput = false;
                 div.remove();
                 input.remove();
-                hasInput = false;
             };
 
             input.addEventListener('keyup', (ev) => {
