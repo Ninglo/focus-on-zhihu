@@ -1,6 +1,6 @@
 import { addWindow } from "./add_window.js"
 import { listenKey } from "./listen_key.js"
-import { mapChildren } from "./map_children.js"
+import { mapTasks } from "./map_tasks.js"
 
 const isZhihu = true
 
@@ -19,7 +19,7 @@ const run = () => {
         const tasks: string[] = []
         listenKey('KeyN', (input) => {
             tasks.push(input)
-            mapChildren(div, tasks)
+            mapTasks(div, tasks)
         })
     }
 }

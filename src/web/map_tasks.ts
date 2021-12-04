@@ -1,5 +1,5 @@
 type MapChildren = (div: HTMLDivElement, tasks: string[]) => void
-export const mapChildren: MapChildren = (div, tasks) => {
+export const mapTasks: MapChildren = (div, tasks) => {
     div.innerHTML = ''
 
     const children = tasks.map(task => {
@@ -11,7 +11,7 @@ export const mapChildren: MapChildren = (div, tasks) => {
         taskInput.innerText = task
         taskInput.addEventListener('change', () => {
             tasks.splice(tasks.findIndex((curtTask) => curtTask === task), 1)
-            mapChildren(div, tasks)
+            mapTasks(div, tasks)
         })
         taskLabel.innerText = task
 
