@@ -9,7 +9,9 @@ export const addWindow: AddWindow = ({ className }) => {
         const div = document.createElement('div');
         div.className = className;
 
-        const container = document.querySelector('.Topstory-container') as HTMLElement | null;
+        const container = (document.querySelector('.Topstory-container')
+            ?? document.querySelector('.Search-container')
+            ?? document.querySelector('.Question-main')) as HTMLElement | null;
         if (!container) {
             throw new Error(`Can't find class Topstory-container`);
         }
