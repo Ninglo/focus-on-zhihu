@@ -1,0 +1,13 @@
+.extension-window {
+    position: sticky;
+    left: 0px;
+    top: 62px;
+
+    width: 296px;
+    min-height: 200px;
+
+    padding: 18px;
+    margin-right: 10px;
+
+    background: white;
+}

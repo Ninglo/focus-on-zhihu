@@ -1,0 +1,19 @@
+{
+  "name": "chrome-extension",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css dist/",
+    "build": "yarn clean && tsc && yarn copy-files",
+    "watch": "tsc watch"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.166",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "tsc": "^2.0.3",
+    "typescript": "^4.5.2"
+  }
+}

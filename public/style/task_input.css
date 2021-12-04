@@ -1,0 +1,17 @@
+.extension-add-task {
+    position: fixed;
+    top: 50%;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.extension-add-task-input {
+    width: 60%;
+
+    padding: 10px;
+
+    font-size: 20px;
+}
