@@ -1,5 +1,5 @@
 import { addWindow } from "./add_window.js"
-import { listenKey } from "./listen_key"
+import { listenKey } from "./listen_key.js"
 
 const isZhihu = true
 
@@ -18,7 +18,6 @@ const run = () => {
             div.innerText += input
         })
     }
-
 }
 
 run()
