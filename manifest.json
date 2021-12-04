@@ -1,6 +1,6 @@
 {
-    "name": "Getting Started Example",
-    "description": "Build an Extension!",
+    "name": "Focus on Zhihu",
+    "description": "Extension can help you focus on Zhihu",
     "version": "1.0",
     "manifest_version": 3,
     "content_scripts": [
