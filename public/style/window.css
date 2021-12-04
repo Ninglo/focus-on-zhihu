@@ -11,3 +11,19 @@
 
     background: white;
 }
+
+.extension-window-title {
+    margin-bottom: 8px;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.extension-window-tasks-container {
+    display: flex;
+    align-items: center;
+}
+
+.extension-window-tasks-container label {
+    margin-bottom: 3px;
+}

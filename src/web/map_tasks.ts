@@ -7,6 +7,7 @@ export const mapTasks: MapChildren = (div, tasks) => {
         const taskInput = document.createElement('input')
         const taskLabel = document.createElement('label')
 
+        taskBox.className = 'extension-window-tasks-container'
         taskInput.type = 'checkbox'
         taskInput.innerText = task
         taskInput.addEventListener('change', () => {
@@ -21,7 +22,7 @@ export const mapTasks: MapChildren = (div, tasks) => {
     })
 
     if (children.length === 0) {
-        div.innerText = 'All done!'
+        div.innerText = "Press 'n' to create new task..."
     } else {
         div.append(...children)
     }

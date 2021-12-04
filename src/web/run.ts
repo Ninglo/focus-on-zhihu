@@ -11,15 +11,21 @@ const run = () => {
         })
         if (!res) { return }
         const [div, container] = res
-
         container.style.width = 'auto'
 
-        div.innerHTML = 'Hello!'
+        const title = document.createElement('h3')
+        title.innerText = 'Focus on Zhihu'
+        title.className = 'extension-window-title'
+
+        const tasksContainer = document.createElement('div')
+        tasksContainer.innerText = "Press 'n' to create new task..."
+
+        div.append(title, tasksContainer)
 
         const tasks: string[] = []
         listenKey('KeyN', (input) => {
             tasks.push(input)
-            mapTasks(div, tasks)
+            mapTasks(tasksContainer, tasks)
         })
     }
 }
