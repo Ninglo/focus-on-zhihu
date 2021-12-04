@@ -1,42 +1,42 @@
-type ListenKey = (code: string, inputCb: (input: string) => void) => void;
+type ListenKey = (code: string, inputCb: (input: string) => void) => void
 export const listenKey: ListenKey = (code, inputCb) => {
-    let hasInput = false;
+    let hasInput = false
 
     window.addEventListener('keydown', e => {
         if (e.code === code && !hasInput) {
-            hasInput = true;
+            hasInput = true
             let removed = false
-            let curt = '';
+            let curt = ''
 
-            const div = document.createElement('div');
-            const input = document.createElement('input');
-            div.className = 'extension-add-task';
-            input.className = 'extension-add-task-input';
-            div.appendChild(input);
+            const div = document.createElement('div')
+            const input = document.createElement('input')
+            div.className = 'extension-add-task'
+            input.className = 'extension-add-task-input'
+            div.appendChild(input)
 
             const clear = () => {
                 if (removed) { return }
 
-                removed = true;
-                hasInput = false;
-                div.remove();
-                input.remove();
-            };
+                removed = true
+                hasInput = false
+                div.remove()
+                input.remove()
+            }
 
             input.addEventListener('keyup', (ev) => {
                 if (ev.key === 'Enter') {
-                    inputCb(curt);
-                    clear();
+                    inputCb(curt)
+                    clear()
                 } else if (ev.key === 'Esc') {
-                    clear();
+                    clear()
                 } else {
-                    curt = (ev.target as HTMLInputElement).value;
+                    curt = (ev.target as HTMLInputElement).value
                 }
-            });
-            input.addEventListener('blur', clear);
+            })
+            input.addEventListener('blur', clear)
 
-            document.body.appendChild(div);
-            setTimeout(() => { input.focus(); });
+            document.body.appendChild(div)
+            setTimeout(() => { input.focus() })
         }
-    });
-};
+    })
+}
