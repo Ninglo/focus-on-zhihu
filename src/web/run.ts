@@ -1,5 +1,6 @@
 import { addWindow } from "./add_window.js"
 import { listenKey } from "./listen_key.js"
+import { mapChildren } from "./map_children.js"
 
 const isZhihu = true
 
@@ -14,8 +15,11 @@ const run = () => {
         container.style.width = 'auto'
 
         div.innerHTML = 'Hello!'
+
+        const tasks: string[] = []
         listenKey('KeyN', (input) => {
-            div.innerText += input
+            tasks.push(input)
+            mapChildren(div, tasks)
         })
     }
 }
